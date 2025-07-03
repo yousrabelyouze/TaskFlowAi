@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow AI - Intelligent Task Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #6B73FF 0%, #000DFF 50%, #0085FF 100%);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+        .dashboard-mockup {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border-radius: 1.5rem;
+        }
+        .pricing-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .highlight {
+            position: relative;
+            z-index: 1;
+        }
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background-color: rgba(107, 114, 255, 0.3);
+            z-index: -1;
+            transform: skewY(-2deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-tasks text-indigo-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900">TaskFlow<span class="text-indigo-600">AI</span></span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#features" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Features</a>
+                    <a href="#product" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Product</a>
+                    <a href="#pricing" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Pricing</a>
+                    <a href="#testimonials" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Testimonials</a>
+                    <a href="#contact" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="flex items-center">
+                    <a href="#" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+                        Sign In
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 md:pt-32 md:pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
+                    <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                        <span class="block">Work Smarter with</span>
+                        <span class="block highlight text-indigo-600">AI-Powered Task Management</span>
+                    </h1>
+                    <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                        Organize, prioritize, and finish tasks faster using intelligent automation that adapts to your workflow.
+                    </p>
+                    <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                                Get Started Free
+                            </a>
+                            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                                Watch Demo
+                            </a>
+                        </div>
+                        <div class="mt-6 flex items-center space-x-4">
+                            <div class="flex -space-x-2">
+                                <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                                <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                                <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80" alt="">
+                            </div>
+                            <p class="text-sm text-gray-500">Trusted by <span class="font-bold text-indigo-600">10,000+</span> teams worldwide</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
+                    <div class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md dashboard-mockup">
+                        <img class="w-full rounded-lg" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="TaskFlow AI Dashboard">
+                        <div class="absolute -bottom-4 -right-4 bg-white p-2 rounded-lg shadow-lg">
+                            <div class="flex items-center">
+                                <div class="p-2 bg-indigo-100 rounded-lg">
+                                    <i class="fas fa-robot text-indigo-600 text-xl"></i>
+                                </div>
+                                <div class="ml-2">
+                                    <p class="text-xs text-gray-500">AI Assistant</p>
+                                    <p class="text-sm font-medium">Prioritizing tasks...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Features</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Smarter task management powered by AI
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Our intelligent system learns your work patterns to optimize your productivity.
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+                    <!-- Feature 1 -->
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md transition duration-300 ease-in-out">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                            <i class="fas fa-brain text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">Smart Prioritization</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Our AI analyzes deadlines, dependencies, and your work habits to automatically prioritize tasks.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md transition duration-300 ease-in-out">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white">
+                            <i class="fas fa-comment-dots text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">Natural Language Input</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Create tasks by typing or speaking naturally. "Schedule meeting with team tomorrow at 2pm" becomes a task.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md transition duration-300 ease-in-out">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                            <i class="fas fa-users text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">Team Collaboration</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Delegate, track, and sync tasks across your team with intelligent workload balancing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md transition duration-300 ease-in-out">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">Progress Analytics</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Visual reports and predictive analytics help you understand and improve your productivity patterns.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Preview Section -->
+    <section id="product" class="py-16 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-200 font-semibold tracking-wide uppercase">Product</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+                    Your intelligent task command center
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-indigo-100 lg:mx-auto">
+                    A unified workspace that adapts to how you work.
+                </p>
+            </div>
+
+            <div class="mt-12">
+                <div class="relative bg-white rounded-xl shadow-xl overflow-hidden dashboard-mockup">
+                    <img class="w-full" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="TaskFlow AI Dashboard">
+                    <div class="absolute inset-0 bg-indigo-900 bg-opacity-50 flex items-center justify-center">
+                        <button class="bg-white rounded-full p-4 shadow-lg hover:bg-indigo-100 transition duration-200">
+                            <i class="fas fa-play text-indigo-600 text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-indigo-500 rounded-md p-2">
+                                <i class="fas fa-magic text-white"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Smart Suggestions</h3>
+                                <p class="mt-1 text-sm text-gray-500">
+                                    AI recommends optimal times to work on tasks based on your calendar and habits.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-purple-500 rounded-md p-2">
+                                <i class="fas fa-bell text-white"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Contextual Reminders</h3>
+                                <p class="mt-1 text-sm text-gray-500">
+                                    Get reminders when you're most likely to complete them, not just at arbitrary times.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-blue-500 rounded-md p-2">
+                                <i class="fas fa-sync-alt text-white"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Auto-Scheduling</h3>
+                                <p class="mt-1 text-sm text-gray-500">
+                                    Tasks automatically reschedule based on priority changes and new deadlines.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Pricing</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Simple, transparent pricing
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Choose the plan that fits your needs. Cancel anytime.
+                </p>
+            </div>
+
+            <div class="mt-12 space-y-8 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
+                <!-- Free Tier -->
+                <div class="pricing-card relative bg-white border-2 border-gray-200 rounded-2xl shadow-sm overflow-hidden transition duration-300 ease-in-out">
+                    <div class="p-8">
+                        <h3 class="text-lg font-medium text-gray-900">Free</h3>
+                        <p class="mt-4 flex items-baseline text-gray-900">
+                            <span class="text-4xl font-extrabold">$0</span>
+                            <span class="ml-1 text-lg font-medium text-gray-500">/month</span>
+                        </p>
+                        <p class="mt-4 text-sm text-gray-500">
+                            Perfect for individuals getting started with task management.
+                        </p>
+                        <ul role="list" class="mt-6 space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 text-green-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <p class="ml-3 text-sm text-gray-500">Up to 100 tasks</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 text-green-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <p class="ml-3 text-sm text-gray-500">Basic prioritization</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 text-green-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <p class="ml-3 text-sm text-gray-500">Email reminders</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 text-gray-400">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <p class="ml-3 text-sm text-gray-500">Team collaboration</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 text-gray-400">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <p class="ml-3 text-sm text-gray-500">Advanced analytics</p>
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <a href="#" class="block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium bg-gray-100 text-gray-700 hover:bg-gray-200">
+                                Get Started
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pro Tier -->
+                <div class="pricing-card relative bg-white border-2 border-indigo-500 rounded-2xl shadow-lg overflow-hidden transition duration-300 ease-in-out transform">
+                    <div class="absolute top-0 right-0 bg-indigo-500 text-white text-xs font-semibold px-3 py-1 rounded-bl-lg">
+                        Most Popular
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-lg font-medium text-gray-900">Pro</h3>
+                        <p class="mt-4 flex items-baseline text-gray-900">
+                            <span class="text-4xl font-extrabold">$12</span>
+                            <span class="ml-1 text-lg font-medium text-gray-500">/month</span>
+                        </p>
+                        <p class="mt-4 text-sm text-gray-500">
+                            For professionals who want to maximize their productivity.
+                        </p>
+                        <ul role="list" class="mt-6 space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 text-green-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <p class="ml-3 text-sm text-gray-500">Unlimited tasks</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 text-green-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <p class="ml-3 text-sm text-gray-500">Advanced AI prioritization</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 text-green-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <p class="ml-3 text-sm text-gray-500">Push notifications</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 text-green-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <p class="ml-3 text-sm text-gray-500">Basic team features</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 text-green-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <p class="ml-3 text-sm text-gray-500">Productivity analytics</p>
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <a href="#" class="block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium bg-indigo-600 text-white hover:bg-indigo-700">
+                                Start Free Trial
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Tier -->
+                <div class="pricing-card relative bg-white border-2 border-gray-200 rounded-2xl shadow-sm overflow-hidden transition duration-300 ease-in-out">
+                    <div class="p-8">
+                        <h3 class="text-lg font-medium text-gray-900">Team</h3>
+                        <p class="mt-4 flex items-baseline text-gray-900">
+                            <span class="text-4xl font-extrabold">$29</span>
+                            <span class="ml-1 text-lg font-medium text-gray-500">/month</span>
+                        </p>
+                        <p class="mt-4 text-sm text-gray-500">
+                            For teams that need to collaborate and stay aligned.
+                        </p>
+                        <ul role="list" class="mt-6 space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 text-green-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <p class="ml-3 text-sm text-gray-500">Everything in Pro</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 text-green-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <p class="ml-3 text-sm text-gray-500">Up to 10 team members</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 text-green-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <p class="ml-3 text-sm text-gray-500">Team workload balancing</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 text-green-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <p class="ml-3 text-sm text-gray-500">Shared projects & goals</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 text-green-500">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <p class="ml-3 text-sm text-gray-500">Advanced team analytics</p>
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <a href="#" class="block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium bg-gray-100 text-gray-700 hover:bg-gray-200">
+                                Contact Sales
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Testimonials</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Loved by professionals worldwide
+                </p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-sm font-bold text-gray-900">Sarah Johnson</h4>
+                            <p class="text-xs text-gray-500">Product Manager, TechCo</p>
+                            <div class="flex mt-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-base text-gray-600">
+                            "TaskFlow AI has completely transformed how I manage my workload. The smart prioritization feature alone has saved me 10+ hours per week. I can't imagine going back to traditional task management tools."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-sm font-bold text-gray-900">Michael Chen</h4>
+                            <p class="text-xs text-gray-500">CTO, Startup Inc.</p>
+                            <div class="flex mt-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-base text-gray-600">
+                            "Our engineering team adopted TaskFlow AI three months ago, and our productivity metrics have improved by 35%. The way it handles task dependencies and automatically reschedules based on blockers is magical."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-sm font-bold text-gray-900">David Rodriguez</h4>
+                            <p class="text-xs text-gray-500">Freelance Designer</p>
+                            <div class="flex mt-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-base text-gray-600">
+                            "As someone who juggles multiple clients, TaskFlow AI's natural language input and automatic time tracking have been game-changers. I'm completing projects faster and with less stress. Worth every penny."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-16 bg-indigo-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+                <div>
+                    <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                        Ready to transform your productivity?
+                    </h2>
+                    <p class="mt-3 max-w-3xl text-lg text-indigo-200">
+                        Join thousands of professionals who are working smarter with AI-powered task management.
+                    </p>
+                </div>
+                <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0 justify-end">
+                    <div class="inline-flex rounded-md shadow">
+                        <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
+                            Start Free Trial
+                        </a>
+                    </div>
+                    <div class="ml-3 inline-flex rounded-md shadow">
+                        <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 bg-opacity-60 hover:bg-opacity-70">
+                            Watch Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <div class="col-span-2">
+                    <h3 class="text-white text-lg font-bold flex items-center">
+                        <i class="fas fa-tasks text-indigo-400 mr-2"></i>
+                        TaskFlow<span class="text-indigo-400">AI</span>
+                    </h3>
+                    <p class="mt-4 text-sm text-gray-300">
+                        The intelligent task management platform that helps you work smarter, not harder.
+                    </p>
+                    <div class="mt-4 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Product</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Features</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Integrations</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Updates</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Company</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">About</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Legal</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Privacy</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Terms</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8">
+                <p class="text-base text-gray-400 text-center">
+                    &copy; 2023 TaskFlow AI. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple testimonial carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonials = document.querySelectorAll('.testimonial-card');
+            let currentIndex = 0;
+            
+            function showTestimonial(index) {
+                testimonials.forEach((card, i) => {
+                    if (i === index) {
+                        card.classList.remove('hidden');
+                        card.classList.add('block');
+                    } else {
+                        card.classList.remove('block');
+                        card.classList.add('hidden');
+                    }
+                });
+            }
+            
+            // For mobile view, we can add a carousel
+            if (window.innerWidth < 768) {
+                testimonials.forEach((card, i) => {
+                    if (i !== 0) card.classList.add('hidden');
+                });
+                
+                setInterval(() => {
+                    currentIndex = (currentIndex + 1) % testimonials.length;
+                    showTestimonial(currentIndex);
+                }, 5000);
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
